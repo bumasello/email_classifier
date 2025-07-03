@@ -1,0 +1,52 @@
+# --------------------------
+# Global
+# --------------------------
+*.log
+*.pyc
+__pycache__/
+.env
+.env.*
+
+# --------------------------
+# Backend (Python)
+# --------------------------
+backend/__pycache__/
+backend/*.py[cod]
+backend/*.sqlite3
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.venv/
+backend/autou/
+backend/dist/
+backend/build/
+backend/*.egg-info/
+
+# If using pipenv or poetry
+Pipfile.lock
+poetry.lock
+
+# --------------------------
+# Frontend (Bun + Vite)
+# --------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/.bun/
+frontend/.vite/
+
+# Optional: Vite build output (if different)
+frontend/build/
+
+# --------------------------
+# Tests (pytest)
+# --------------------------
+tests/__pycache__/
+tests/.pytest_cache/
+coverage/
+htmlcov/
+.cache/
+
+# --------------------------
+# OS-specific
+# --------------------------
+.DS_Store
+Thumbs.db
