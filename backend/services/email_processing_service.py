@@ -1,6 +1,6 @@
 from backend.services.nlp_service import preprocess_text
 from backend.services.openai_service import OpenAIService
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class EmailProcessingResult(TypedDict):
