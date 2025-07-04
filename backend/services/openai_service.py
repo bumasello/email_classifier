@@ -34,7 +34,10 @@ class OpenAIService:
                 max_tokens=10,  # Limita a reposta
                 temperature=0.1,  # Torna a resposta mais determinística
             )
-            classification = response.choices[0].message.content.strip()
+            message = response.choices[0].message
+            if message.content is None:
+                return "Erro: resposta sem conteúdo"
+            classification = message.content.strip()
 
             if classification not in ["Produtivo", "Improdutivo"]:
                 if "Produtivo" in classification:
@@ -48,4 +51,45 @@ class OpenAIService:
             print(f"Erro ao classificar e-mail com OpenAI: {e}")
             return "Erro na Classificação"
 
-            ## implementei somente a primeira função
+    def generate_response(self, email_content: str, classification: str) -> str:
+        """
+        Gera uma reposta automática para o e-mail com base na sua classificação usando a API do OpenAI.
+        """
+        prompt = ""
+        if classification == "Produtivo":
+            prompt = f"""
+                    O e-mail a seguir foi classificado como 'Produtivo'.
+                    Gere uma resposta automática profissional e concisa para este e-mail,
+                    indicando que a solicitação será processada e que o remetente será contatado em breve.
+                    E-mail: {email_content}
+                    """
+        elif classification == "Improdutivo":
+            prompt = f"""O e-mail a seguir foi classificado como 'Improdutivo'.
+                        Gere uma resposta automática educada e breve, agradecendo a mensagem
+                        e informando que nenhuma ação adicional é necessária.
+                        E-mail: {email_content}"""
+        else:
+            return "Não foi possível gerar uma resposta para esta classificação."
+
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-3.5-turbo",  # Ou outro modelo de sua preferência
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Você é um assistente que gera respostas automáticas para e-mails.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+                max_tokens=150,
+                temperature=0.7,
+            )  # Permite um pouco mais de criatividade na resposta)
+
+            message = response.choices[0].message
+            if message.content is None:
+                return "Erro: resposta sem conteúdo"
+            classification = message.content.strip()
+            return classification
+        except Exception as e:
+            print(f"Erro ao gerar resposta com OpenAI: {e}")
+            return "Erro na Geração de Resposta"
