@@ -22,6 +22,11 @@ app.add_middleware(
 app.include_router(email_router.router, prefix="/api/v1", tags=["Email Processing"])
 
 
+@app.get("/")
+async def welcome():
+    return {"message": "Bem-vindo à API de Classificação de Emails da AutoU!"}
+
+
 @app.get("/healthcheck")
 async def health_check():
-    return {"message": "Bem-vindo à API de Classificação de Emails da AutoU!"}
+    return {"message": "OK"}
