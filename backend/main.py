@@ -1,6 +1,7 @@
-from api.v1 import email_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+from api.v1 import email_router
 
 app = FastAPI(
     title="AutoU Classificador de Emails",
@@ -8,7 +9,7 @@ app = FastAPI(
     version="0.1.0",
 )
 
-origins = ["http://localhost:5173"]
+origins = ["http://localhost:5173", "https://email-classifier-sand-chi.vercel.app/"]
 
 app.add_middleware(
     CORSMiddleware,
