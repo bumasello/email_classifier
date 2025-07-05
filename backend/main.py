@@ -9,7 +9,7 @@ app = FastAPI(
     version="0.1.0",
 )
 
-origins = ["http://localhost:5173", "https://email-classifier-sand-chi.vercel.app/"]
+origins = ["http://localhost:5173", "https://email-classifier-sand-chi.vercel.app"]
 
 app.add_middleware(
     CORSMiddleware,
