@@ -8,7 +8,7 @@ from fastapi import (
     Form,
     Depends,
 )  # Importar Depends
-from backend.services.email_processing_service import (
+from services.email_processing_service import (
     EmailProcessingService,
     EmailProcessingResult,
 )

@@ -1,5 +1,5 @@
-from backend.services.nlp_service import preprocess_text
-from backend.services.openai_service import OpenAIService
+from services.nlp_service import preprocess_text
+from services.openai_service import OpenAIService
 from typing_extensions import TypedDict
 
 

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from backend.api.v1 import email_router
+from api.v1 import email_router
 
 app = FastAPI(
     title="AutoU Classificador de Emails",
