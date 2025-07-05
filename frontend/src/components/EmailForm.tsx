@@ -133,7 +133,7 @@ const EmailForm: React.FC<EmailFormProps> = ({ onSubmit, isLoading }) => {
             <FormField
               control={form.control}
               name="emailFile"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Upload de Arquivo (.txt, .pdf)</FormLabel>
                   <FormControl>

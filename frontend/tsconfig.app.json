@@ -22,7 +22,14 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"], // Alias para src
+      "@/components/*": ["./src/components/*"], // Alias para componentes UI
+      "@/lib/utils": ["./src/lib/utils"] // Alias para utilitários
+    }
   },
   "include": ["src"]
 }
