@@ -1,6 +1,6 @@
+from api.v1 import email_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.v1 import email_router
 
 app = FastAPI(
     title="AutoU Classificador de Emails",
@@ -21,6 +21,6 @@ app.add_middleware(
 app.include_router(email_router.router, prefix="/api/v1", tags=["Email Processing"])
 
 
-@app.get("/")
+@app.get("/healthcheck")
 async def health_check():
     return {"message": "Bem-vindo à API de Classificação de Emails da AutoU!"}
