@@ -1,6 +1,6 @@
 // frontend/src/pages/HomePage.tsx
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EmailForm from "../components/EmailForm";
 import {
   Card,
@@ -25,6 +25,28 @@ const HomePage: React.FC = () => {
   const [results, setResults] = useState<EmailProcessingResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [showErrorDialog, setShowErrorDialog] = useState(false);
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+
+  useEffect(() => {
+    const sendHealthCheck = async () => {
+      try {
+        if (API_BASE_URL !== "http://localhost:8000") {
+          console.log("Enviando health check para o backend...");
+          await fetch(`${API_BASE_URL}/healthcheck`);
+        }
+      } catch (err) {
+        console.error("Erro no health check do backend:", err);
+      }
+    };
+
+    sendHealthCheck();
+
+    const intervalId = setInterval(sendHealthCheck, 300000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   const handleSubmitEmail = async (data: { content: string | File }) => {
     setIsLoading(true);
     setError(null);
@@ -38,13 +60,10 @@ const HomePage: React.FC = () => {
     }
 
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/v1/process-email",
-        {
-          method: "POST",
-          body: formData,
-        },
-      );
+      const response = await fetch(`${API_BASE_URL}/api/v1/process-email`, {
+        method: "POST",
+        body: formData,
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
