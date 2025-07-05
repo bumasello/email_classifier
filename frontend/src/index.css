@@ -1,0 +1,101 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cores para o MODO CLARO (Light Mode) */
+    --background: 37 29% 86%; /* #DFD0B8 - bege claro */
+    --foreground: 210 16% 20%; /* #222831 - cinza escuro */
+
+    /* Cards com tom levemente mais escuro que o background */
+    --card: 37 22% 82%; /* Bege mais suave */
+    --card-foreground: 210 16% 20%; /* #222831 - cinza escuro */
+
+    /* Popovers com tom mais neutro */
+    --popover: 37 18% 78%; /* Bege mais neutro */
+    --popover-foreground: 210 16% 22%; /* Cinza um pouco mais claro */
+
+    --primary: 210 16% 20%; /* #222831 - cinza escuro */
+    --primary-foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    --secondary: 33 17% 54%; /* #948979 - marrom acinzentado */
+    --secondary-foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    /* Muted com tom mais neutro */
+    --muted: 37 15% 75%; /* Bege acinzentado claro */
+    --muted-foreground: 210 12% 28%; /* Cinza médio */
+
+    /* Accent com variação do marrom */
+    --accent: 33 20% 58%; /* Marrom mais claro */
+    --accent-foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    --destructive: 0 84.2% 60.2%; /* Vermelho padrão para erros */
+    --destructive-foreground: 210 20% 98%;
+
+    /* Bordas com tom neutro */
+    --border: 33 12% 68%; /* Marrom acinzentado claro */
+
+    /* Inputs com tom mais definido */
+    --input: 37 20% 80%; /* Bege para inputs */
+
+    --ring: 210 16% 20%; /* Cor do foco (ring) - cinza escuro */
+    --radius: 0.5rem; /* Cantos arredondados */
+  }
+
+  .dark {
+    /* Cores para o MODO ESCURO (Dark Mode) */
+    --background: 210 16% 15%; /* Cinza ainda mais escuro que #222831 */
+    --foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    /* Cards com tom mais claro que o background */
+    --card: 210 12% 25%; /* #393E46 - cinza médio */
+    --card-foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    /* Popovers com tom intermediário */
+    --popover: 210 14% 22%; /* Tom intermediário */
+    --popover-foreground: 37 25% 82%; /* Bege suave */
+
+    --primary: 33 17% 54%; /* #948979 - marrom acinzentado */
+    --primary-foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    --secondary: 210 12% 25%; /* #393E46 - cinza médio */
+    --secondary-foreground: 37 29% 86%; /* #DFD0B8 - bege claro */
+
+    /* Muted com tom cinza escuro */
+    --muted: 210 14% 28%; /* Cinza escuro para muted */
+    --muted-foreground: 33 15% 62%; /* Marrom claro para texto muted */
+
+    /* Accent com marrom mais vibrante no dark mode */
+    --accent: 33 20% 58%; /* Marrom mais claro */
+    --accent-foreground: 210 16% 20%; /* #222831 - cinza escuro */
+
+    --destructive: 0 62.8% 30.6%; /* Vermelho padrão para erros no dark mode */
+    --destructive-foreground: 210 40% 98%;
+
+    /* Bordas com tom cinza escuro */
+    --border: 210 10% 32%; /* Cinza escuro para bordas */
+
+    /* Inputs com tom mais escuro */
+    --input: 210 12% 30%; /* Cinza escuro para inputs */
+
+    --ring: 33 17% 54%; /* Cor do foco (ring) - marrom acinzentado */
+
+    /* Chart colors com variações da paleta */
+    --chart-1: 210 16% 30%; /* Cinza principal mais claro */
+    --chart-2: 33 17% 50%; /* Marrom variação */
+    --chart-3: 210 12% 40%; /* Cinza médio */
+    --chart-4: 33 20% 45%; /* Marrom escuro */
+    --chart-5: 37 25% 75%; /* Bege médio */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,13 @@
+Improdutivo: Olá, estou com problemas ao acessar o Banco de Dados em produção. Exite alguma instabilidade no servidor que não foi pontuada? Gostaria de agendar uma reunião para planejar a subida de uma nova base de leitura de dados. Grato!
+
+Produtivo:
+Assunto: Acompanhamento - Solicitação de Acesso ao Sistema Interno
+Corpo do E-mail:
+Prezados,
+Espero que este e-mail os encontre bem.
+Estou escrevendo para fazer um acompanhamento sobre a minha solicitação de acesso ao sistema interno, protocolo #SYS-2024-07-05-001, enviada em 5 de julho de 2024.
+Gostaria de verificar o status atual da liberação e se há alguma informação adicional ou documento que eu precise fornecer para agilizar o processo. Meu prazo para iniciar as atividades que dependem deste acesso é 15 de julho.
+Agradeço a atenção e fico à disposição para qualquer esclarecimento.
+Atenciosamente,
+Marcos
+Tech lead

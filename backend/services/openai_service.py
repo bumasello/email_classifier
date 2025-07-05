@@ -60,13 +60,13 @@ class OpenAIService:
             prompt = f"""
                     O e-mail a seguir foi classificado como 'Produtivo'.
                     Gere uma resposta automática profissional e concisa para este e-mail,
-                    indicando que a solicitação será processada e que o remetente será contatado em breve.
+                    indicando que a solicitação será processada e que o remetente será contatado em breve. Para dados de contato: Meu nome: Bruno Masello, cargo: Analista Júnior.
                     E-mail: {email_content}
                     """
         elif classification == "Improdutivo":
             prompt = f"""O e-mail a seguir foi classificado como 'Improdutivo'.
                         Gere uma resposta automática educada e breve, agradecendo a mensagem
-                        e informando que nenhuma ação adicional é necessária.
+                        e informando que nenhuma ação adicional é necessária. Para dados de contato: Meu nome: Bruno Masello, cargo: Analista Júnior.
                         E-mail: {email_content}"""
         else:
             return "Não foi possível gerar uma resposta para esta classificação."
