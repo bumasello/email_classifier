@@ -121,6 +121,8 @@ A aplicação está deployada nas seguintes plataformas:
 
 Assista ao vídeo abaixo para uma demonstração rápida da aplicação e uma breve explicação técnica:
 
+- **Video Demonstrativo:** [Link para o Video demonstrativo](https://drive.google.com/file/d/1oXDHFbxtE2tazZXk6JaLKjvZUyFf9j_j/view?usp=drive_link)
+
 ## 💡 Decisões de Design e Arquitetura
 
 - **Arquitetura Modular (Backend):** O backend segue uma estrutura MVC-like com Services, separando as responsabilidades de roteamento (controllers/routers), lógica de negócio (services) e integração com APIs externas (OpenAIService, NLPService). Isso promove a manutenibilidade, testabilidade e escalabilidade.
